@@ -52,8 +52,8 @@ jobs:
 
         - name: 'Build Inventory Image'
           run: |
-              docker build --tag ghcr.io/karimdevwm/apigateway-service:preprod-${{env.NEW_BUILD_NUMBER}} .
-              docker push ghcr.io/karimdevwm/apigateway-service:preprod-${{env.NEW_BUILD_NUMBER}}
+              docker build --tag ghcr.io/karimdevwm/${{github.repository}}:preprod-${{env.NEW_BUILD_NUMBER}} .
+              docker push ghcr.io/karimdevwm/${{github.repository}}:preprod-${{env.NEW_BUILD_NUMBER}}
           
     #   deploy:
     #     needs: push-store-docker-image
