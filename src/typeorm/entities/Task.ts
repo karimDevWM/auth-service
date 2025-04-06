@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from './User';
 // import { Item } from './Item';
 
@@ -20,6 +20,7 @@ export class Task {
   completionDate: Date | null;
 
   @ManyToOne(() => User, (user) => user.tasks)
+  @JoinColumn({ name: 'userId' })
   userId: User;
 
   // @OneToMany(() => Item, (item) => item.taskId)
